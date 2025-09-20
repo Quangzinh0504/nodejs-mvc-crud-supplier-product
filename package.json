@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-mvc-crud-supplier-product",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vonhattruong1812004/nodejs-mvc-crud-supplier-product.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Vonhattruong1812004/nodejs-mvc-crud-supplier-product/issues"
+  },
+  "homepage": "https://github.com/Vonhattruong1812004/nodejs-mvc-crud-supplier-product#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

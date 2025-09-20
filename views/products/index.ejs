@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container mt-3">
+            <h2>Sản phẩm</h2>
+            <a class="btn btn-success mb-2" href="/products/new">Thêm mới</a>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Tên</th>
+                    <th>Địa chỉ</th>
+                    <th>Điện thoại</th>
+                    <th>Nhà cung cấp</th>
+                    <th>Hành động</th>
+                </tr>
+                <% products.forEach(p => { %>
+                    <tr>
+                        <td>
+                            <%= p.name %>
+                        </td>
+                        <td>
+                            <%= p.address %>
+                        </td>
+                        <td>
+                            <%= p.phone %>
+                        </td>
+                        <td>
+                            <%= p.supplierId ? p.supplierId.name : '' %>
+                        </td>
+                        <td>
+                            <a href="/products/<%= p._id %>/edit" class="btn btn-warning btn-sm">Sửa</a>
+                            <form method="post" action="/products/<%= p._id %>/delete" style="display:inline">
+                                <button class="btn btn-danger btn-sm">Xoá</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

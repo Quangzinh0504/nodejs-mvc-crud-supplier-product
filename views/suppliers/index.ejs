@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nhà cung cấp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+        <div class="container mt-3">
+            <h2>Nhà cung cấp</h2>
+            <a class="btn btn-success mb-2" href="/suppliers/new">Thêm mới</a>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Tên</th>
+                    <th>Địa chỉ</th>
+                    <th>Điện thoại</th>
+                    <th>Hành động</th>
+                </tr>
+                <% suppliers.forEach(s => { %>
+                    <tr>
+                        <td>
+                            <%= s.name %>
+                        </td>
+                        <td>
+                            <%= s.address %>
+                        </td>
+                        <td>
+                            <%= s.phone %>
+                        </td>
+                        <td>
+                            <a href="/suppliers/<%= s._id %>/edit" class="btn btn-warning btn-sm">Sửa</a>
+                            <form method="post" action="/suppliers/<%= s._id %>/delete" style="display:inline">
+                                <button class="btn btn-danger btn-sm">Xoá</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
+        </div>
+        <%- include('../partials/footer') %>
+</body>
+
+</html>
